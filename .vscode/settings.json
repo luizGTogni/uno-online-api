@@ -1,8 +1,12 @@
 {
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,
+    "python.analysis.typeCheckingMode": "standard",
+    "python.analysis.autoImportCompletions": true,
     "files.exclude": {
-        "**/*.pyc": { "when": "$(basename).py"},
+        "**/*.pyc": {
+            "when": "$(basename).py"
+        },
         "**/__pycache__": true,
         "**/*.pytest_cache": true,
     }
