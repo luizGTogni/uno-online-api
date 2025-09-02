@@ -1,8 +1,9 @@
 from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
-    APP_NAME: str = "Uno Online API"
-    DEBUG: bool = True
+    APP_DEBUG: bool = True
+    APP_PORT: int = 3000
+    APP_HOST: str = "0.0.0.0"
     DATABASE_URL: str = ""
 
     class Config:
