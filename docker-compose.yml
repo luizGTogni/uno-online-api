@@ -1,0 +1,16 @@
+services:
+  postgres-db:
+    image: postgres:15
+    container_name: uno-postgres-db
+    restart: always
+    env_file:
+      - .env
+    environment:
+      TZ: UTC
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
