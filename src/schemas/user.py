@@ -1,4 +1,5 @@
-from pydantic import BaseModel, EmailStr
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, EmailStr
 
 class UserCreate(BaseModel):
     name: str
@@ -11,6 +12,12 @@ class UserResponse(BaseModel):
     name: str
     username: str
     email: EmailStr
+    role: str
+    level: int
+    rating: int
+    created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(
+        extra="forbid",
+        from_attributes=True,
+    )

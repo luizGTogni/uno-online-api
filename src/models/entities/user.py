@@ -30,7 +30,7 @@ class User(Base):
 
     def __repr__(self):
         return (
-            "<User id='{self.id}' username='{self.username}' level='{self.level}'>"
+            f"<User id='{self.id}' username='{self.username}' level='{self.level}'>"
         )
 
     def to_dict(self) -> dict:
