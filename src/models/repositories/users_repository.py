@@ -19,12 +19,14 @@ class UsersRepository(IUsersRepository):
             except Exception as e:
                 raise e
 
-    def create(self, user_data: UserCreate) -> None:
+    def create(self, user_data: UserCreate) -> dict:
         with self.__db_connection as db:
             try:
-                user = User(user_data)
+                user = User(**user_data.model_dump())
                 db.session.add(user)
                 db.session.commit()
+                return user.to_dict()
             except Exception as e:
+                print("erro")
                 db.session.rollback()
                 raise e

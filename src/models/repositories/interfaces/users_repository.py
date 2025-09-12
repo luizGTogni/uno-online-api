@@ -10,5 +10,5 @@ class IUsersRepository(ABC):
         pass
 
     @abstractmethod
-    def create(self, user_data: UserCreate) -> None:
+    def create(self, user_data: UserCreate) -> dict:
         pass
